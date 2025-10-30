@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      simulations: {
+        Row: {
+          algorithm: string
+          created_at: string
+          id: string
+          memory_blocks: Json
+          name: string
+          processes: Json
+          stats: Json
+          total_memory: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          algorithm: string
+          created_at?: string
+          id?: string
+          memory_blocks: Json
+          name: string
+          processes: Json
+          stats: Json
+          total_memory: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          algorithm?: string
+          created_at?: string
+          id?: string
+          memory_blocks?: Json
+          name?: string
+          processes?: Json
+          stats?: Json
+          total_memory?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
