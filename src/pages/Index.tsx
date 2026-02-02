@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { MemoryBlock, Process, AllocationAlgorithm, MemoryStats } from "@/types/memory";
 import { allocateMemory, deallocateMemory, calculateFragmentation } from "@/utils/memoryAlgorithms";
 import { MemoryVisualizer } from "@/components/MemoryVisualizer";
@@ -10,7 +10,7 @@ import { MemoryStats as StatsDisplay } from "@/components/MemoryStats";
 import { SaveSimulation } from "@/components/SaveSimulation";
 import { LoadSimulation } from "@/components/LoadSimulation";
 import { Button } from "@/components/ui/button";
-import { RotateCcw, Cpu, LogOut } from "lucide-react";
+import { RotateCcw, Cpu, LogOut, Code2 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -141,6 +141,12 @@ const Index = () => {
           </div>
           
           <div className="flex gap-2">
+            <Link to="/lexical-analyzer">
+              <Button variant="outline">
+                <Code2 className="mr-2 h-4 w-4" />
+                Lexical Analyzer
+              </Button>
+            </Link>
             {user ? (
               <>
                 <SaveSimulation
